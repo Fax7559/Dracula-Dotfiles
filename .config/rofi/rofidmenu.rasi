@@ -1,0 +1,14 @@
+configuration{
+    modi: ["drun", "window", "run"];
+    icon-theme: "dracula-icons-main";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: true;
+    sidebar-mode: false;
+    display-drun: " ";
+    display-run: " ";
+    display-window: " ";
+}
+@theme "~/.config/rofi/rofidmenu_theme_big.rasi"
