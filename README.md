@@ -8,13 +8,18 @@ This is my dotfiles, based on the endeavourOS i3 theme, rethemed with a Dracula 
 
 **Warning**: Do not use this blindly, make sure it works with your personal setup and options first
 
-## Apps shown
 
+
+## Dependencies and optional additions
+
+- i3lock-color
 - kitty
 - rofi
-- cmus
-- zathura
-- cava
+- nerd-fonts
+- brightnessctl
+- i3-battery-popup
+- Permit the "wallpaper.sh" shell script in '~/.config/i3/scripts' if you want the wallpaper script working on login
+- Permit the "i3bartoggle.sh" shell script in '~/.config/i3/scripts' to enable hiding the top bar
 
 ## Contents
 
@@ -24,6 +29,14 @@ This is my dotfiles, based on the endeavourOS i3 theme, rethemed with a Dracula 
 - i3 config
 
 ## Other notes
-- Using *JetBrainsMono NF* Nerdfont 
+- Using *JetBrainsMono NF* and *BitstromWera* Nerdfonts 
 - Keybinds are heavily customized, make sure you change them to your own preferences before using this
-- Also using GTK theme for dracula [found here](https://github.com/dracula/gtk)
+- Go to the [official dracula theme website](https://draculatheme.com/) for more theming options for your apps
+
+### Apps shown on screenshots
+
+- kitty
+- rofi
+- cmus
+- zathura
+- cava
