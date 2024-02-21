@@ -36,7 +36,7 @@ include ~/.config/i3/config_autostart
 # Color settings for windows #
 ##############################
 
-include /home/vitor/.config/i3/config_colors
+include ~/.config/i3/config_colors
 
 ################
 # Bar settings #
