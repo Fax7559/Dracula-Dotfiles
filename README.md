@@ -14,6 +14,7 @@ This is my dotfiles, based on the endeavourOS i3 theme, rethemed with a Dracula 
 
 - i3lock-color
 - rofi
+- kitty
 - nerd-fonts
 - brightnessctl
 - i3-battery-popup
