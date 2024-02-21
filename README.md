@@ -27,7 +27,7 @@ This is my dotfiles, based on the endeavourOS i3 theme, rethemed with a Dracula 
 - i3 config
 
 ## Other notes
-- Using *JetBrainsMono NF* and *BitstromWera* Nerdfonts 
+- Using *JetBrainsMono* and *BitstromWera* Nerdfonts 
 - Keybinds are heavily customized, make sure you change them to your own preferences before using this
 - Go to the [official dracula theme website](https://draculatheme.com/) for more theming options for your apps
 
