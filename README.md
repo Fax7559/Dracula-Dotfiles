@@ -13,7 +13,6 @@ This is my dotfiles, based on the endeavourOS i3 theme, rethemed with a Dracula 
 ## Dependencies and optional additions
 
 - i3lock-color
-- kitty
 - rofi
 - nerd-fonts
 - brightnessctl
@@ -24,8 +23,6 @@ This is my dotfiles, based on the endeavourOS i3 theme, rethemed with a Dracula 
 ## Contents
 
 - rofi config
-- kitty config
-- zathura config
 - i3 config
 
 ## Other notes
@@ -35,8 +32,8 @@ This is my dotfiles, based on the endeavourOS i3 theme, rethemed with a Dracula 
 
 ### Apps shown on screenshots
 
-- kitty
+- [Dracula themed kitty](https://draculatheme.com/kitty) 
 - rofi
-- cmus
-- zathura
+- cmus (with ':colorscheme dracula' set)
+- [Dracula themed zathura](https://draculatheme.com/zathura)
 - cava
