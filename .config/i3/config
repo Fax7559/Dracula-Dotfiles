@@ -1,0 +1,46 @@
+####################
+# Main i3wm config #
+####################
+
+# Font for window titles and bar
+font pango: JetBrainsMono NF 8
+
+# Mod key to the winkey
+set $mod Mod4
+
+###############
+# Keybindings #
+###############
+
+include ~/.config/i3/config_keybindings
+
+####################
+# Window Behaviour #
+####################
+
+include ~/.config/i3/config_windows
+
+##############
+# Workspaces #
+##############
+
+include ~/.config/i3/config_workspaces
+
+############################################
+# Autostart applications/services on login #
+############################################
+
+include ~/.config/i3/config_autostart
+
+##############################
+# Color settings for windows #
+##############################
+
+include /home/vitor/.config/i3/config_colors
+
+################
+# Bar settings #
+################
+
+# Mostly includes color settings, other bar options are present in ~/.config/i3/i3blocks.conf
+include ~/.config/i3/config_colors_i3bar

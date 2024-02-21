@@ -1,0 +1,34 @@
+#########
+# i3bar #
+#########
+
+# For status and icon display, check i3blocks.conf instead
+
+# Start i3bar to display a workspace bar
+bar 	{
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	position top
+	tray_padding 0
+
+	# Any workspace that has a name of the form “[n][:][NAME]” will display only the name.
+	strip_workspace_numbers yes
+
+	# Define colors variables
+	set $darkblue   #6272a4
+	set $red        #ff5555
+	set $white      #f8f8f2
+	set $black      #282a36
+	set $purple     #bd93f9
+
+	colors {
+		separator    $purple
+		background   $black
+		statusline   $white
+
+		#                    border    bg        txt        indicator
+		focused_workspace    $purple   $purple   $black     $purple
+		active_workspace     $purple   $purple   $black     $purple
+		inactive_workspace   $purple   $black    $white     $purple
+		urgent_workspace     $red      $red      $white     $purple
+		}
+	}

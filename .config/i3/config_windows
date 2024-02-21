@@ -1,0 +1,55 @@
+####################
+# Window Behaviour #
+####################
+
+## For window and Resize mode keybindings, check ~/.config/i3/config_keybindings
+
+# Mouse focus disabled (can still click to focus)
+focus_follows_mouse no
+
+# Border on windows
+new_window pixel 2
+
+# Thin borders
+hide_edge_borders both
+
+# Set inner/outer gaps
+smart_gaps on
+gaps outer	2
+gaps inner	2
+
+# Window title alignment
+title_align center
+
+# Set windows that float automatically
+for_window [class="Yad" instance="yad"]                           floating enable
+for_window [class="Galculator" instance="galculator"]             floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"]         floating enable
+for_window [class="Xsane" instance="xsane"]                       floating enable
+## for_window [class="Pavucontrol" instance="pavucontrol"]           floating enable
+for_window [class="qt5ct" instance="qt5ct"]                       floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"]         floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [window_role="About"]                                  floating enable
+for_window [class="(?i)lutris" title="Install *"]                 floating enable
+for_window [class="(?i)scrcpy"]                                   floating enable
+## for_window [class="Blueman-manager"]                          floating enable
+for_window [class="kitty" title="cmus"]                           floating enable
+for_window [class="Anki" title="Add"]                             floating enable
+for_window [title="Add games to Lutris"]                          floating enable
+
+# Set windows that stick when floating
+## for_window [class="mpv"]        sticky enable
+for_window [class="(?i)scrcpy"] sticky enable
+for_window [title="cmus"]       sitcky enable
+
+# Set custom sizes for windows
+for_window [class="(?i)scrcpy"]              resize set 240 518
+## for_window [class="Blueman-manager"]         resize set 400 400
+for_window [class="kitty" title="cmus"]      resize set 400 600
+for_window [class="chatterino"]              resize set 250
+for_window [title="Chatterino Settings"]     resize set 900 600
+
+# Set position of floating window
+for_window [class=".*"]   move position center
+for_window [title="cmus"] move position 950 60

@@ -1,0 +1,31 @@
+############################################
+# Autostart applications/services on login #
+############################################
+
+# Get auth work with polkit-gnome
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Dex execute .desktop files + apps using /etc/xdg/autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# Start KDE connect indicator
+exec --no-startup-id kdeconnect-indicator
+
+# Start brightnessctl for backlight control
+exec --no-startup-id brightnessctl set 1%+
+
+# Start a script to setup displays (Create monitor.sh file to use with ARandR)
+#exec --no-startup-id ~/.screenlayout/monitor.sh
+
+# Set wallpaper with script (script searches for wallpapers in the folder ~/Pictures/Wallpapers/)
+exec --no-startup-id sleep 2 && ~/.config/i3/scripts/wallpaper.sh
+
+# Disable power saving
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s off
+
+# Desktop notifications
+exec --no-startup-id /usr/bin/dunst
+
+# Battery notification
+exec --no-startup-id i3-battery-popup -n -D -L 20 -l 10

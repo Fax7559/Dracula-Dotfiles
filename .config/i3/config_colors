@@ -1,0 +1,19 @@
+######################################
+# Color settings for bar and windows #
+######################################
+
+# Define colors variables
+set $darkblue    #6272a4
+set $red         #ff5555
+set $white       #f8f8f2
+set $black       #282a36
+set $purple      #bd93f9
+set $yellowbrown #e1b700
+set $pink        #ff79c6
+
+# Define colors for windows
+#class                    border       bground    text    indicator    child_border
+client.focused            $pink        $purple    $black  $purple      $pink
+client.unfocused          $darkblue    $darkblue  $white  $darkblue    $darkblue
+client.focused_inactive   $darkblue    $black     $white  $black       $darkblue
+client.urgent             $red         $red       $white  $yellowbrown $yellowbrown

@@ -1,0 +1,163 @@
+###############
+# Keybindings #
+###############
+
+# Power Menu
+bindsym $mod+Ctrl+e exec ~/.config/i3/scripts/powermenu
+
+# Lock the system (Requires i3lock-color)
+bindsym $mod+l exec ~/.config/i3/scripts/dracula-lock
+
+# Lock the system and go into suspend mode
+bindsym $mod+Ctrl+l exec ~/.config/i3/scripts/dracula-lock; exec systemctl suspend
+
+# Reload the configuration file
+bindsym $mod+Ctrl+c reload
+
+# Restart i3
+bindsym $mod+Ctrl+r restart
+
+# Toggle i3bar
+bindsym $mod+m exec --no-startup-id ~/.config/i3/scripts/i3bartoggle.sh
+
+# Open keybinding list
+bindsym $mod+F1 exec xed ~/.config/i3/Keybindings
+
+# Backlight control
+bindsym XF86MonBrightnessUp    exec brightnessctl set 10%+
+bindsym XF86MonBrightnessDown  exec brightnessctl set 10%-
+
+# Change volume
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+
+# Mute
+bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+
+# Audio control
+bindsym XF86AudioPlay    exec playerctl play
+bindsym XF86AudioPause   exec playerctl pause
+bindsym XF86AudioNext    exec playerctl next
+bindsym XF86AudioPrev    exec playerctl previous
+
+# Print screen
+bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+
+# Power Profiles menu switcher (rofi)
+bindsym $mod+Ctrl+p exec ~/.config/i3/scripts/power-profiles
+
+# Rofi menu for applications
+bindsym $mod+z exec rofi -modi drun -show drun \
+		-config ~/.config/rofi/rofidmenu.rasi
+
+# Rofi menu for open windows
+bindsym $mod+Ctrl+z exec rofi -show window \
+		-config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+Tab exec rofi -show window \
+		-config ~/.config/rofi/rofidmenu.rasi
+
+
+#########################
+# Workspace keybindings #
+#########################
+
+# Keybindings related to workspaces need to be in the same file as other workspace
+# configurations to work properly. You'll find them in ~/.config/i3/config_workspaces
+
+######################
+# Window keybindings #
+######################
+
+# Resize mode
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+		# Resize keys
+		bindsym Left  resize shrink    width    10 px or 10 ppt
+		bindsym Down  resize grow      height   10 px or 10 ppt
+		bindsym Up    resize shrink    height   10 px or 10 ppt
+		bindsym Right resize grow      width    10 px or 10 ppt
+        
+		# Precise resizing
+		bindsym Ctrl+Left    resize shrink width    5 px or 5 ppt
+		bindsym Ctrl+Down    resize grow   height   5 px or 5 ppt
+		bindsym Ctrl+Up      resize shrink height   5 px or 5 ppt
+		bindsym Ctrl+Right   resize grow   width    5 px or 5 ppt
+		
+        # Rough Resizing
+		bindsym Ctrl+Shift+Left    resize shrink width    100 px or 100 ppt
+		bindsym Ctrl+Shift+Down    resize grow   height   100 px or 100 ppt
+		bindsym Ctrl+Shift+Up      resize shrink height   100 px or 100 ppt
+		bindsym Ctrl+Shift+Right   resize grow   width    100 px or 100 ppt
+
+		# Leave resize mode
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+		}
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod+Ctrl
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Kill selected window
+bindsym --release $mod+Shift+q  exec xkill
+
+# Scratchpad move/show
+bindsym $mod+Ctrl+h move scratchpad
+bindsym $mod+h      scratchpad show
+
+# Sticky floating window toggle (to change default stickied windows, go to config_windows)
+bindsym $mod+s sticky toggle
+
+# Move the window focus
+bindsym $mod+Left    focus left
+bindsym $mod+Down    focus down
+bindsym $mod+Up      focus up
+bindsym $mod+Right   focus right
+
+# Move the window position
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Split in horizontal orientation
+bindsym $mod+Ctrl+v split h
+
+# Split in vertical orientation
+bindsym $mod+v split v
+
+# Enter fullscreen mode for the focused window
+bindsym $mod+Ctrl+f fullscreen toggle
+
+# Toggle tiling / floating for focused window
+bindsym $mod+Ctrl+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+#########################
+# Application shortcuts #
+#########################
+
+# Start Kitty terminal
+bindsym $mod+t exec kitty
+
+# App shortcuts
+# 	App shortcuts with number keys
+bindsym $mod+Shift+1 exec /usr/bin/firefox
+bindsym $mod+Shift+2 exec /usr/bin/thunar
+bindsym $mod+Shift+3 exec /usr/bin/thunderbird
+bindsym $mod+Shift+4 exec scrcpy -S -w
+#	App shortcuts with numpad (On or Off)
+bindcode $mod+Shift+87        exec /usr/bin/firefox
+bindcode $mod+Shift+88        exec /usr/bin/thunar
+bindcode $mod+Shift+89        exec /usr/bin/thunderbird
+bindcode $mod+Shift+83        exec scrcpy -S -w
+bindcode $mod+Mod2+Shift+87   exec /usr/bin/firefox
+bindcode $mod+Mod2+Shift+88   exec /usr/bin/thunar
+bindcode $mod+Mod2+Shift+89   exec /usr/bin/thunderbird
+bindcode $mod+Mod2+Shift+83   exec scrcpy -S -w
+
